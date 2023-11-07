@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+De quantos em quantos dias você faz musculação em 1 mês?:<input type="number" id="input_musculação">
+<button onclick="calcular()">Exibir rotina mensal</button><br>
+<div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+function calcular(){
+
+div_mensagem.innerHTML = ``;
+
+var musculação = Number(input_musculação.value);
+
+var inicio = 0;
+
+
+if (musculação <= 30) {
+    
+
+while ( inicio < 30) {
+    
+
+    
+    if ( inicio % musculação == 0) {
+        inicio += 1;
+
+        div_mensagem.innerHTML += `Dia ${inicio} - Musculação  <br><br>`;
+
+    }else{ 
+        inicio += 1;
+        div_mensagem.innerHTML += `Dia ${inicio} - Comer, dormir etc <br><br>`};
+
+    
+
+    
+}
+
+}else alert("Informe um número válido!")
+}
+
+
+
+</script>

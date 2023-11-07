@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #f1f1f1f1;">
+
+    <div display="flex" flex-direction="center">
+        A sua plantação possui quantos metros²? <input id="ipt_metros"> <br>
+    Quanto você paga por m³ de água? (discriminado na conta de água) <input type="number" id="ipt_custo">
+    <button onclick="calculo()">Calcular</button>
+    <div id="div_mensagem"></div>
+</div>
+</body>
+</html>
+
+<script>
+    function calculo(){
+        var metrosQuadrados = Number(ipt_metros.value);
+        var hectare = metrosQuadrados * 0.0001;
+        var aguaNecessaria = hectare * 4500000;
+        var quantidadeÁgua = (aguaNecessaria) * 1.4;
+        var metrosCubicos = quantidadeÁgua / 1000;
+        var sensor = quantidadeÁgua * 0.8;
+        var metrosCubicos_2 = sensor / 1000;
+        var valor = Number(ipt_custo.value);
+        var gasto1 = valor * metrosCubicos;
+        var gasto2 = valor * metrosCubicos_2;
+
+        div_mensagem.innerHTML = `<br>Você gastaria R$ ${gasto1} na conta de água, com um desperdício de água de em média de ${quantidadeÁgua - aguaNecessaria}L .<br>Com a nossa solução, você gastará R$${gasto2}, uma economia de R$${gasto1 - gasto2} e com uma economia de água de ${quantidadeÁgua * 0.2}L`
+    }
+</script>

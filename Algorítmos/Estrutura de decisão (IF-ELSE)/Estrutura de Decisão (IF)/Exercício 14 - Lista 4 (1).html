@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o nome do passageiro: <input type="text" id="input_passageiro"><br>
+    Insira a distância do local atual até o destino (em KM): <input type="text" id="input_distancia"><br>
+    Insira a bandeira da corrida: <input type="number" min="1" max="3" id="input_bandeira"><br>
+    Insira o horário da corrida: <input type="number" min="0" max="23" id="input_horario"><br>
+    <button onclick="calculo()">Calcular corrida</button><br>
+    <div id="div_agostinho"></div>
+</body>
+</html>
+
+<script>
+    function calculo(){
+        var passageiro = input_passageiro.value;
+        var distancia = input_distancia.value;
+        var bandeira = input_bandeira.value;
+        var horario = input_horario.value;
+        var valorKM = Number(1.25)
+
+        if ( bandeira == 1 && horario >= 0 || horario <= 6){
+            div_agostinho.innerHTML = `Olá ${passageiro}. Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}KM e o total da corrida será de ${(valorKM * distancia) * 1.05}`
+        }
+        if ( bandeira == 1 && horario >= 7 || horario <= 12){
+            div_agostinho.innerHTML = `Olá ${passageiro}. Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}KM e o total da corrida será de ${(valorKM * distancia) * 1.10}`
+        }
+        if ( bandeira == 1 && horario >= 13 || horario <= 23){
+            div_agostinho.innerHTML = `Olá ${passageiro}. Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}KM e o total da corrida será de ${(valorKM * distancia) * 1.15}`
+        }
+        if ( bandeira == 2 && horario >= 0 || horario <= 6){
+            div_agostinho.innerHTML = `Olá ${passageiro}. Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}KM e o total da corrida será de ${(valorKM * distancia) * 1.15}`
+        }
+        if ( bandeira == 2 && horario >= 7 || horario <= 12){
+            div_agostinho.innerHTML = `Olá ${passageiro}. Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}KM e o total da corrida será de ${(valorKM * distancia) * 1.20}`
+        }
+        if ( bandeira == 2 && horario >= 13 || horario <= 23){
+            div_agostinho.innerHTML = `Olá ${passageiro}. Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}KM e o total da corrida será de ${(valorKM * distancia) * 1.30}`
+        }
+        if ( bandeira == 3 && horario >= 0 || horario <= 6){
+            div_agostinho.innerHTML = `Olá ${passageiro}. Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}KM e o total da corrida será de ${(valorKM * distancia) * 1.15}`
+        }
+        if ( bandeira == 3 && horario >= 7 || horario <= 12){
+            div_agostinho.innerHTML = `Olá ${passageiro}. Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}KM e o total da corrida será de ${(valorKM * distancia) * 1.30}`
+        }
+        if ( bandeira == 3 && horario >= 13 || horario <= 23){
+            div_agostinho.innerHTML = `Olá ${passageiro}. Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}KM e o total da corrida será de ${(valorKM * distancia) * 1.45}`
+        }
+    }
+</script>

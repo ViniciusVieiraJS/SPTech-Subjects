@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        Nota 1 <input type="text" id="input_n1"> <br>
+        Nora 2 <input type="text" id="input_n2"> <br>
+        <button onclick="avaliar()">Avaliar</button>
+        <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var n1 = Number(input_n1.value);
+        var n2 = Number(input_n2.value);
+        media = (n1 + n2)/2;
+        if ( media > 6){
+            div_mensagem.innerHTML = `Sua média é de ${media} e você está aprovado`
+        } else {
+            div_mensagem.innerHTML = `Média não é maior que 6`
+        }
+        if ( media < 6){
+            div_mensagem.innerHTML = `Sua média é de ${media} e você está reprovado`
+        }
+        
+    }
+</script>

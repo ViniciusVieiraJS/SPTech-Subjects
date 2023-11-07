@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o nome de cada projeto que você já criou: <input type="text" id="input_projeto"><br>
+    <button onclick="registrar()">Registrar Projetos</button>
+    <button onclick="mostrar()">Mostrar Projetos</button>
+    <div id="div_mensagem"></div>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+    var listaProjetos = []
+    var qtdProjetos = listaProjetos.length;
+
+    function registrar(){
+        var projeto = input_projeto.value;
+        listaProjetos.push(projeto)
+        qtdProjetos = listaProjetos.length;
+        
+
+        if(qtdProjetos <= 4)
+        div_mensagem.innerHTML = `Você já fez ${qtdProjetos} projetos. Por isso você é um profissional Júnior`
+        else if(qtdProjetos <= 12)
+        div_mensagem.innerHTML = `Você já fez ${qtdProjetos} projetos. Por isso você é um profissional Pleno`
+        else
+        div_mensagem.innerHTML = `Você já fez ${qtdProjetos} projetos. Por isso você é um profissional Senior`
+
+    }
+
+    function mostrar(){
+        div_mostrar.innerHTML = ""
+        for (var i = 1; i <= listaProjetos.length; i++) {
+            var projetoAtual = listaProjetos[qtdProjetos - i];
+
+            div_mostrar.innerHTML += `<br>${projetoAtual}`
+
+        }
+    }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a primeira nota <input type="text" id="input_nota1"><br>
+    Insira a segunda nota <input type="text" id="input_nota2"><br>
+    <button onclick="situação()">Verificar situação</button>
+    <div id="div_nota"></div>
+</body>
+</html>
+
+<script>
+    function situação(){
+        var nota1 = Number(input_nota1.value);
+        var nota2 = Number(input_nota2.value);
+        var media = (nota1 + nota2)/2;
+
+        if ( media >= 6){
+            div_nota.innerHTML = `Parabéns, aprovado!`
+        }
+            else{
+            div_nota.innerHTML = `Tente outra vez...` 
+
+            }
+        
+    }
+</script>

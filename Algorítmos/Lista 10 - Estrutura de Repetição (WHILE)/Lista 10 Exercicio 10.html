@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  Informe o início:<input type="number" id="intervaloInicial">
+  Informe o final:<input type="number" id="intervaloFinal">
+  <button onclick="contar()">S2 Pares</button>
+  <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+
+function contar(){
+
+    var intervalo2 = Number(intervaloFinal.value)
+    var intervalo1 = Number(intervaloInicial.value)
+    div_mensagem.innerHTML = ""
+
+    if (intervalo2 > intervalo1) {
+
+        while (intervalo1 <= intervalo2) {
+
+            if (intervalo1 % 2 == 0) {
+                div_mensagem.innerHTML += `${intervalo1}<br>`;
+            }
+
+            intervalo1 += 1;
+
+    }
+    }else div_mensagem.innerHTML += `Coloque o valor inicial e o valor final.`;
+
+    
+
+
+
+    
+
+};
+
+</script>

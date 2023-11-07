@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap');
+
+body {
+    background-color: antiquewhite;
+}
+
+.container_logo {
+    height: 3cm;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+.container_logo img{
+    max-width: 30%
+}
+
+.container_numero{
+    display: inline-block; 
+    margin-left: 2cm;
+    font-family: Nunito Sans; 
+    font-weight: bold; 
+    font-size: larger; 
+    color: blueviolet;
+}
+
+.botao{
+    color: blueviolet; 
+    background-color: rgb(204, 184, 184); 
+    border-radius: 100px; 
+    font-family: Nunito Sans; 
+    font-weight: bold;
+    border-color: transparent
+}
+
+.agradecimentos{
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    margin-right: 10px;
+    font-family: Nunito Sans; 
+    font-weight: bolder ; 
+    color: blueviolet;
+}

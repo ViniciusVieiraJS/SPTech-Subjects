@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual o preço do produto? <input type="number" id="input_preco"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="atualizar()">Atualizar Estoque</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    var listaProdutos = []
+    var valorEstoque = 0
+    function cadastrar(){
+        var preco = input_preco.value
+        listaProdutos.push(preco)
+    }
+
+    function atualizar(){
+        valorEstoque += input_preco.value;
+        div_mensagem.innerHTML = ""
+        for (var i = 0; i < listaProdutos.length; i++) {
+            var precoAtual = listaProdutos[i];
+
+            div_mensagem.innerHTML = `Você tem ${i + 1} produtos cadastrados`
+
+            
+        }
+
+            
+    }
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a temperatura do ambiente? <input type="text" id="input_temperatura"><br>
+    <button onclick="clima()">Verificar clima</button>
+    <div id="div_temperatura"></div>
+</body>
+</html>
+<script>
+    function clima(){
+        var temperatura = input_temperatura.value;
+
+        if (temperatura < 10){
+            div_temperatura.innerHTML = "<img src =\ https://assets.folhavitoria.com.br/images/acdd88d0-3e69-0136-6560-6231c35b6685--minified.jpg width = 200 height = 200>"
+        }
+            else{
+            div_temperatura.innerHTML = "<img src=\ https://static.tuasaude.com/media/article/ed/zg/como-identificar-alimentos-estragados_22594_l.webp width = 200 height = 200>"
+            }    
+    }
+</script>

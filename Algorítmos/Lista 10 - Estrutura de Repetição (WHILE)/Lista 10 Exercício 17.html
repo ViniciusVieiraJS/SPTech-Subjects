@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas pessoas vão entrar no carro? <input type="text" id="input_pessoas"><br>
+    Qual a capacidade do carro? <input type="text" id="input_capacidade"><br>
+    <button onclick="carona()">Partiu carona</button>
+    <div id="div_mensagem1"></div>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function carona(){
+        var pessoas = input_pessoas.value;
+        var capacidade = input_capacidade.value;
+        var contador = 0
+        div_mensagem.innerHTML = ``
+        
+        while((contador < pessoas) && contador < capacidade){
+            contador += 1
+            div_mensagem1.innerHTML = `Entrou o 1º passageiro (que é o motorista) <br>`;
+            div_mensagem.innerHTML += `Entrou o ${contador}º passageiro <br>`;
+
+
+        }
+
+        if (pessoas > capacidade){
+            while(contador < pessoas){
+            contador += 1
+            div_mensagem.innerHTML += `O ${contador}º passageiro terá que esperar! <br>`}}
+    }
+</script>

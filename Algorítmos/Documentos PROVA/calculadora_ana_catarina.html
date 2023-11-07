@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnosolo</title>
+</head>
+<body>
+
+    <div id="imagem" style="background-image: url('https://img.freepik.com/free-photo/asia-young-female-farmer-hat-standing-walk-field-woman-inspecting-agricultural-garden-plant-growth-concept-ecology-transport-clean-air-food-bio-product_1150-44693.jpg?w=740&t=st=1694139323~exp=1694139923~hmac=9421a220107c3e856ac5913aeb03d4bf35c2c6b746aa4773d909b41a428b7fa9'); background-size: cover; background-position: center; height: 1000px; text-align: center; display: flex; flex-direction: column; justify-content: center; color: rgb(32, 69, 24);">
+
+        <div id="titulo">
+            <h1 style=" font-size: 40px;" >Tecnosolo</h1>
+            <p style="font-size: 20px; color: rgb(10, 2, 2);">Descubra as vantagens de usar nosso software</p>
+        </div>
+        
+        <div id="display_fundo" style="display: flex; justify-content: space-between;">
+
+            <div id="fundo_transparente" style="background-color: rgba(255, 255, 255, 0.5); padding: 80px; border-radius: 30px; width:20%; margin:0 auto; max-height: 400px;  ">
+
+                <div id="perguntas">
+                <h2 style=" margin-top: -10px;" >Quanto vou economizar?</h2>
+                <p>Qual o seu consumo de água atualmente? (em m3)</p>
+                <input id="input_volume_agua_atual" type="text">
+                <p>Quanto você pagou na sua última conta de água?</p>
+                <input id="input_conta_agua" type="text">
+                </div>
+            
+                <div id="botao" style="padding: 30px; ">
+                    <button onclick="calcular()">Calcular</button>
+                </div>
+    
+                <div id="div_mensagem"></div>
+    
+            </div>
+    
+            <div id="fundo_transparente" style="background-color: rgba(255, 255, 255, 0.5); padding: 80px; border-radius: 30px; width:20%; margin:0 auto;">
+    
+                <div id="perguntas_2">
+                    <h2 style=" margin-top: -10px;" >Quantos sensores vou precisar?</h2>
+                    <p>Qual a quantidade de hectares em sua plantação? (1 hectare = 10000m2)</p> 
+                    <input id="input_qtd_hectare" type="text">
+                    <p>Qual a profundidade do solo que será monitorado? (em cm)</p>
+                    <input id="input_profundidade_solo" type="text">
+                    <p>Qual a densidade de sensores por metro quadrado, desejada para o monitoramento da plantação?</p> 
+                    <input id="input_densidade_sensores" type="text">
+                    <p>(1.0) -  1 sensor por metro quadrado (alta densidade, alta precisão).</p>
+                    <p>(0.5) - 1 sensor a cada dois metros quadrados (densidade média).</p>
+                    <p>(0.25) - 1 sensor a cada quatro metros quadrados (baixa densidade, economia de sensores).</p>
+                    <p>(0.125 - 1 sensor a cada oito metros quadrados(baixissima densidade, economia de sensores))</p>
+                </div>
+            
+                <div id="botao" style="padding: 30px; ">
+                    <button onclick="calcular_sensores()">Calcular</button>
+                </div>
+    
+                <div id="div_mensagem_sensores"></div>
+    
+            </div>
+
+        </div>
+        
+
+    </div>
+
+    
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+
+        var volume_agua_atual = Number(input_volume_agua_atual.value);
+        var conta_agua = Number(input_conta_agua.value);
+        var volume_em_litros = volume_agua_atual * 1000;
+
+        var preco_por_litro = conta_agua / volume_em_litros;
+        var desperdicio = volume_em_litros * 0.3;
+        var desperdicio_valor = preco_por_litro * desperdicio;
+        var economia = preco_por_litro * (desperdicio * 0.8);
+        var conta_agua_nova = conta_agua - economia ;
+
+        div_mensagem.innerHTML = `Em média ${desperdicio} litros de água são perdidos em sua plantação, o que corresponde a um total de ${desperdicio_valor} reais a mais nas suas contas. Usando a nossa solução conseguiremos reduzir em média 80% do desperdício de água, o que corresponde a uma economia de ${economia} reais, sua conta de água passaria em média de ${conta_agua} reais para ${conta_agua_nova} reais.`;
+    } 
+
+    function calcular_sensores() {
+
+        var qtd_hectare = Number(input_qtd_hectare.value);
+        var profundidade_solo = Number(input_profundidade_solo.value);
+        var densidade_sensores = Number(input_densidade_sensores.value);
+
+        var hectare_metros = qtd_hectare * 10000;
+        var profundidade_solo_metros = profundidade_solo / 100;
+        var area_monitorada = Number(hectare_metros * profundidade_solo_metros);
+        var area_total = hectare_metros * profundidade_solo_metros;
+        var sensores_necessarios = area_total * densidade_sensores;
+
+        div_mensagem_sensores.innerHTML= `Número de sensores necessários: ${sensores_necessarios}`;
+    }
+
+</script>

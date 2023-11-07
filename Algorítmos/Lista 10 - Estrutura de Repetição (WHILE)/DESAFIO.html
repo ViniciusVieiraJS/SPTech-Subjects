@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a quantidade de Macarons a ser vendido? <input type="number" id="input_macaron"><br>
+    Qual a quantidade de Brigadeiros a ser vendido? <input type="number" id="input_brigadeiro"><br>
+    Qual a quantidade de Cupcakes a ser vendido? <input type="number" id="input_cupcake"><br>
+    Qual a quantidade de Cheesecakes a ser vendido? <input type="number" id="input_cheesecake"><br>
+    Qual o preço de cada Macaron? <input type="number" id="input_valorMacaron"><br>
+    Qual o preço de cada Brigadeiro? <input type="number" id="input_valorBrigadeiro"><br>
+    Qual o preço de cada Cupcake? <input type="number" id="input_valorCupcake"><br>
+    Qual o preço de cada Cheesecake? <input type="number" id="input_valorCheesecake"><br>
+    
+    <button onclick="vendas()">Verificar Vendas</button><br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function vendas(){
+        var macarons = Number(input_macaron.value);
+        var brigadeiro = Number(input_brigadeiro.value);
+        var cupcake = Number(input_cupcake.value);
+        var cheesecake = Number(input_cheesecake.value);
+        var valorMacaron = Number(input_valorMacaron.value);
+        var valorBrigadeiro = Number(input_valorBrigadeiro.value);
+        var valorCupcake = Number(input_valorCupcake.value);
+        var valorCheesecake = Number(input_valorCheesecake.value);
+        var contador = 0;
+        var contadorVenda = 0
+        div_mensagem.innerHTML = ""
+
+        if((macarons < 0) || (brigadeiro < 0) || (cupcake <0) ||(cheesecake< 0) || (valorMacaron < 0) || (valorBrigadeiro < 0) || (valorCupcake < 0) || (valorCheesecake < 0) ){
+            alert("Você não pode inserir um valor negativo")
+
+        }
+        else{
+            if(macarons == 0){
+            div_mensagem.innerHTML += ""}
+            else{
+            
+                while(contador < macarons){
+                    contador += 1
+                    contadorVenda += 1
+                    div_mensagem.innerHTML += `Venda ${contadorVenda} - <img style="width: 100px;" src="https://www.estadao.com.br/resizer/5q1sDaC4qZoYq5Q87HJfUlen9Tg=/720x503/filters:format(jpg):quality(80):focal(579x1254:589x1264)/cloudfront-us-east-1.images.arcpublishing.com/estadao/SFYPBGYE75GDJENLY7475OLBQM.jpeg" alt=""> - R$${valorMacaron}<br>`
+            }
+                }
+            var totalMacaron = contador * valorMacaron;
+            var quantidadeMacaron = contador
+            contador = 0;
+            if(brigadeiro == 0){
+            div_mensagem.innerHTML += ""}
+            else{
+
+                while(contador < brigadeiro){
+                    contador += 1
+                    contadorVenda += 1
+                    div_mensagem.innerHTML += `Venda ${contadorVenda} -  <img style="width: 100px;" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/631c8344389e4bada5bfb203b05f385e/BFV11392_Brigadeiro4-waysTastyOlympics-FB1080SQ.jpg?resize=1200:*" alt=""> - R$${valorBrigadeiro}<br>`
+
+            }
+                }
+            var totalBrigadeiro = contador * valorBrigadeiro;
+            var quantidadeBrigadeiro = contador;
+            contador = 0;
+            if(cupcake == 0){
+                div_mensagem.innerHTML += ""}
+            else{
+
+                while(contador < cupcake){
+                    contador += 1
+                    contadorVenda += 1
+                    div_mensagem.innerHTML += `Venda ${contadorVenda} - 
+                    <img style="width: 100px;" src="https://natashaskitchen.com/wp-content/uploads/2020/05/Vanilla-Cupcakes-3.jpg" alt=""> - R$${valorCupcake}<br>`
+                    
+                }
+                
+                }
+            var totalCupcake = contador * valorCupcake;
+            var quantidadeCupcake = contador;
+            contador = 0;
+
+            if(cheesecake == 0){
+                div_mensagem.innerHTML += ""}
+            else{
+
+                while(contador < cheesecake){
+                    contador += 1
+                    contadorVenda += 1
+                    div_mensagem.innerHTML += `Venda ${contadorVenda} - <img style="width: 100px;" src="https://www.receitasnestle.com.br/sites/default/files/srh_recipes/8fafc3935c766bf8c9f1331a325e48a9.jpg" alt="">
+                     - R$${valorCheesecake}<br>`
+                    
+                }
+                
+                
+                }
+            var totalCheesecake = contador * valorCheesecake;
+            var quantidadeCheesecake = contador;
+            var preçoTotal = totalMacaron + totalBrigadeiro + totalCupcake + totalCheesecake;
+
+            div_mensagem.innerHTML += `<br>Com a quantidade de ${quantidadeMacaron} Maracons, ${quantidadeBrigadeiro} Brigadeiros, ${quantidadeCupcake} Cupcakes e ${quantidadeCheesecake} Cheesecakes, a venda totalizará R$${preçoTotal}`
+        }
+    }
+</script>

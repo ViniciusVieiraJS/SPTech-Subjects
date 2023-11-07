@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um texto <input type="text" id="input_texto"><br>
+    <button onclick="destrinchar()">Destrinche!!!</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function destrinchar(){
+        var texto = input_texto.value
+        div_mensagem.innerHTML = ""
+
+        for (var i = 0; i <= texto.length - 1; i++){
+            div_mensagem.innerHTML += `${texto[i]} <br>`
+        }
+
+    
+    }
+</script>

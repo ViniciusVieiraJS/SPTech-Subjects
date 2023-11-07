@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas Coca-Cola você acha que já bebeu na vida? <input type="text" id="input_coca"><br>
+    <button onclick="coca()">Ver a quantidade</button>
+    <div id="div_imagem"></div>
+</body>
+</html>
+
+<script>
+    function coca(){
+        var cola = input_coca.value
+
+        var contador = 0
+
+        var img = `<img style="width: 150px" src="https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1984-refrigerante-coca-cola-lata-350ml.jpg?s=ef1f9ccf20330fe8f998c65372625c77">`
+
+        div_imagem.innerHTML = ""
+
+        while(contador < cola){
+            contador += 1
+            div_imagem.innerHTML += `${img}`
+        }
+    }
+</script>

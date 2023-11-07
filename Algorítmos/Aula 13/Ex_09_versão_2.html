@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o intervalo de altura:<br>
+    Altura inicial: <input type="number" id="input_altura1"><br>
+    Altura final: <input type="number" id="input_altura2"><br>
+
+    Qual o nome do piloto? <input type="text" id="input_piloto"><br>
+    Qual a altura do piloto? <input type="number" id="input_altura"><br>
+    <button onclick="piloto()">Analisar</button><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function piloto(){
+        var inicial = Number(input_altura1.value);
+        var final = Number(input_altura2.value);
+        var nome = input_piloto.value;
+        var altura = Number(input_altura.value);
+
+        if (inicial > 1 && final > inicial){
+        if (altura >= inicial && altura <= final)
+        div_mensagem.innerHTML += `O candidado ${nome} com altura de ${altura} participará do processo de seleção de piloto <br>`
+        else 
+        div_mensagem.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos. <br>`
+    }   else{
+        alert("CAMPOS INVÁLIDOS")
+    }
+}
+</script>

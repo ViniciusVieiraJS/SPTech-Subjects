@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Número: <input type="text" id="input_numero"><br>
+    <button onclick="contar()">Contar</button>
+    <div id="div_numero"></div>
+</body>
+
+</html>
+<script> 
+    function contar(){
+        var numero = Number(input_numero.value);
+
+        
+        // cada repetição é chamada de ITERAÇÃO
+        for (var i = 1;i <= numero; i++){
+            div_numero.innerHTML += `${i}<br>`
+        }
+        // var numero = input_numero.value;
+        // var contador = 0;
+
+        // while (contador < numero){
+        //     contador ++;
+        //     div_numero.innerHTML += `${contador}<br>`
+        // }
+    }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Cadastre o seu bairro: <input type="text" id="input_bairro"><br>
+    <button onclick="cadastro()">Cadastrar bairro</button><br>
+    Digite um número para indicar o local onde morou <input type="number" id="input_numero"><br>
+    <button onclick="moradia()">Relembrar moradia</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    var listaMoradia = []
+    
+
+    function moradia(){
+        var tamanhoBairro = listaMoradia.length
+        var numero = Number(input_numero.value - 1);
+        for (var i = 0; i < tamanhoBairro; i++) {
+            if(numero == i){
+                div_mensagem.innerHTML = `${listaMoradia[i]}`
+                break
+            }
+            else{
+                div_mensagem.innerHTML = `Você não morou nesse bairro`
+            }
+            
+        }
+    }
+    function cadastro(){
+        var bairro = input_bairro.value;
+        listaMoradia.push(bairro);
+
+
+        
+    }
+</script>

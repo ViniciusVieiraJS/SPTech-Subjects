@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a frequência do aluno? <input type="text" id="input_frequencia"><br>
+    <button onclick="aluno()">Analisar frequência</button>
+    <div id="div_aluno"></div>
+
+</body>
+</html>
+
+<script>
+    function aluno(){
+        var frequencia = input_frequencia.value;
+
+        if ( frequencia < 50){
+            div_aluno.innerHTML = "<img src=\ https://img.freepik.com/fotos-gratis/casal-de-turistas-felizes-segurando-um-mapa_329181-533.jpg?w=996&t=st=1693310563~exp=1693311163~hmac=b0fe2d6117d7a4d1bdf147e034c3e22a06aa6b99c2ab8a3c8ca55f8c7eb18f08 width = 200 height = 200>";
+    }
+            else{
+            div_aluno.innerHTML = "<img src=\ https://media.istockphoto.com/id/961768024/pt/foto/studious-student-learning-taking-notes-in-the-night.webp?s=2048x2048&w=is&k=20&c=zFP2nRXKRcuxMq7qz_h_N0uMX0zk6myCZyczT6pwIww= width = 200 height = 200>";
+            }
+}
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos jogos de PS5 você tem? <input type="number" id="input_PS5"><br>
+    Quantos jogos de Xbox Series X você tem? <input type="number" id="input_xbox"><br>
+    <button onclick="lado()">Veja seu lado</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function lado(){
+        var PS5 = input_PS5.value;
+        var xbox = input_xbox.value;
+
+        if(PS5 > xbox){
+            
+            div_mensagem.innerHTML = `Você é sonysta! God of War GOTY!`}
+
+            if(PS5 < xbox){
+
+                div_mensagem.innerHTML = `Você é caixista! Viva o gamepass!`
+            }
+    }
+            if(PS5 == xbox){
+                div_mensagem.innerHTML = `Você é um amante de jogos! Diga não à console war!`
+            }
+
+        
+    
+</script>

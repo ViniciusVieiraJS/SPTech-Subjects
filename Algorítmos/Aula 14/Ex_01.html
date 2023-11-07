@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img_tamanho" style="width: 100px;" src="https://www.sptech.school/assets/images/logos/sptech_logo_1.png" alt="amogus">
+    <button onclick="aumentar()">Aumentar Largura</button>
+    <button onclick="diminuir()">Diminuir Largura</button>
+    
+    
+    
+</body>
+</html>
+
+<script>
+    var largura = 100;
+   
+    function aumentar(){
+        largura = largura + 10;
+        
+       
+        img_tamanho.style.width = `${largura}px`
+    }
+
+    function diminuir(){
+
+        largura = largura - 10;
+        
+       
+        img_tamanho.style.width = `${largura}px`
+
+    }
+</script>

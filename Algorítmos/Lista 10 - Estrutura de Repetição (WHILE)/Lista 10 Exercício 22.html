@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos depósitos você fez no banco? <input type="number" id="input_deposito"><br>
+    Qual o valor de cada depósito? <input type="number" id="input_valor"><br>
+    <button onclick="grana()">Acompanhar grana</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function grana(){
+        var deposito = Number(input_deposito.value)
+        var valor = Number(input_valor.value)
+        
+        var total = 0
+        var contador = 0
+        div_mensagem.innerHTML = ""
+
+        while (contador < deposito){
+            contador += 1;
+            total += valor;
+            if(contador % 3 == 0){
+                var bonus = total * 0.01;
+                total += bonus;
+                div_mensagem.innerHTML += `<img style="width: 20px" src="https://img.freepik.com/vetores-premium/logotipo-estrela-simples-e-moderno_535345-2471.jpg">`
+            }
+            div_mensagem.innerHTML += `${contador}º Mês: R$ ${total} <br>`
+        }
+            div_mensagem.innerHTML += `Total guardado: R$ ${total}`
+    }
+</script>

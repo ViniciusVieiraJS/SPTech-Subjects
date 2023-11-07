@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="esquerda()">Mover esquerda</button>
+    <button onclick="direita()">Mover direita</button>
+    <input type="text" id="input_pixels">Quantos pixels?
+
+    <br>
+    <br>
+    <img id="imagem_bart" style="margin-left: 0px;" src="https://upload.wikimedia.org/wikipedia/pt/a/aa/Bart_Simpson_200px.png">
+</body>
+</html>
+
+<script>
+    var margin_left = 0 
+    function esquerda(){
+
+        movimento = Number(input_pixels.value)
+        margin_left = margin_left - movimento
+        exibir()
+
+
+    }
+
+    function direita(){
+        
+        movimento = Number(input_pixels.value)
+        margin_left = margin_left + movimento
+        exibir()
+    }
+
+    function exibir(){
+        imagem_bart.style.marginLeft = `${margin_left}px`
+    }
+</script>

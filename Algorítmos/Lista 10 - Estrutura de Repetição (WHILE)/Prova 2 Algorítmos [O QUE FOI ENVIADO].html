@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos pontos de Chakra o Naruto tem? <input type="number" min="20" max="5000" id="input_chakra"><br>
+    Qual a quantidade de clones que você deseja? <input type="number" min="0" max="250" id="input_clones"><br>
+    Quantidade de clones por linha <input type="number" id="input_linha"><br>
+    <button onclick="criar()">Criar clones</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+    function criar(){
+        var chakra = Number(input_chakra.value);
+        var clones = Number(input_clones.value);
+        var linha = Number(input_linha.value);
+        var chakraSobra = chakra - (clones * 20)
+        var contador = 0
+        div_mensagem.innerHTML = ""
+
+        if((chakra < 20 || chakra > 5000) || (clones < 0 || clones > 250) || (linha <= 0)){
+        alert("ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0")}
+            else{
+
+                if(chakra < clones * 20){
+                    alert("Erro. A quantidade de Chakra deve ser maior ou igual ao número de clones * 20")
+                    
+                }    
+                else{
+                    while(contador < clones){
+                        contador += 1
+                        div_mensagem.innerHTML += `<img style="width:100px" src="naruto.jpg">`
+                        if(contador % linha == 0)
+                        div_mensagem.innerHTML += `<br>`
+                        
+
+                        
+
+                    }
+                
+
+                div_mensagem.innerHTML += `<br> <b> ANÁLISE DA GERAÇÃO DE CLONES </b><br>
+                Chakra Inicial: ${chakra} <br>
+                Quantidade de Clones: ${clones} <br>
+                Sobra de Chakra: ${chakraSobra}`
+
+                if((chakraSobra > 1000) || (clones > 50) && (chakraSobra >= chakra * 0.2))
+                    div_mensagem.innerHTML += `<br> PROVAVELMENTE VOCÊ VAI GANHAR`
+                else if((chakraSobra > 500) || (clones >= 20 && clones <= 50) && (chakraSobra > chakra * 0.1))
+                    div_mensagem.innerHTML += `<br> A LUTA VAI SER MUITO BOA`
+                else
+                    div_mensagem.innerHTML += `<br> TORÇA PARA O ADVERSÁRIO SER FRAQUINHO`
+                }}}
+
+        
+</script>

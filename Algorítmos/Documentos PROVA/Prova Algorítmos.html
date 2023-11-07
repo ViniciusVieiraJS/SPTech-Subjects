@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de energia consumida em kWh: <input type="number" id="input_kwh"><br>
+    Insira a bandeira tarifária: <input type="text" id="input_bandeira"><br>
+    Insira o volume de água consumido (em litros): <input type="number" id="input_volumeAgua"><br>
+    Insira a quantidade de vazamentos de água na casa: <input type="number" id="input_vazamento"><br>
+    Insira o volume de gás consumido (em litros): <input type="number" id="input_volumeGas"><br>
+    Insira o valor base do plano de internet: <input type="number" id="input_valorInternet"><br>
+    Há uma linha telefônica vinculada ao plano de internet? <input type="text" id="input_linhatelefone"><br>
+    <button onclick="calculo()">Calcular Despesas Fixas</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function calculo(){
+    var kwh = Number(input_kwh.value);
+    var bandeira = input_bandeira.value;
+    var volumeAgua = Number(input_volumeAgua.value);
+    var vazamento = Number(input_vazamento.value);
+    var volumeGas = Number(input_volumeGas.value);
+    var valorInternet = Number(input_valorInternet.value);
+    var linhatelefone = (input_linhatelefone.value);
+    var valorAgua = 3.50 * volumeAgua;
+    var valorGas = 2.50 * volumeGas;
+    var valorbandeiraAmarela = kwh * 0.90;
+    var valorbandeiraVermelha = kwh * 1
+    var valorbandeiraVerde = kwh * 0.75;
+
+    div_mensagem.innerHTML = "";
+
+    if (bandeira == 'verde'){
+        if (kwh >50){
+            valorbandeira = valorbandeiraVerde
+        div_mensagem.innerHTML = `Com o consumo de ${kwh} na bandeira ${bandeira}, a conta de energia se totaliza R$ ${valorbandeira}`}
+        
+        else{
+            valorbandeira = valorbandeiraVerde * 0.9
+            div_mensagem.innerHTML = `Com o consumo de ${kwh} na bandeira ${bandeira}, a conta de energia se totaliza R$ ${valorbandeira}`
+        }}
+
+    if (bandeira == 'amarela'){
+        if (kwh >50){
+            valorbandeira = valorbandeiraAmarela
+        
+        div_mensagem.innerHTML = `Com o consumo de ${kwh} na bandeira ${bandeira}, a conta de energia se totaliza R$ ${valorbandeira}`}
+        
+        else{
+            valorbandeira = valorbandeiraAmarela * 0.9
+            div_mensagem.innerHTML = `Com o consumo de ${kwh} na bandeira ${bandeira}, a conta de energia se totaliza R$ ${valorbandeira}`}
+        }
+
+    if (bandeira == 'vermelha'){
+        if (kwh >50){
+            valorbandeira = valorbandeiraVermelha
+        
+        div_mensagem.innerHTML = `Com o consumo de ${kwh} na bandeira ${bandeira}, a conta de energia se totaliza R$ ${valorbandeira}`}
+        
+        else{
+            valorbandeira = valorbandeiraVermelha * 0.9;
+            div_mensagem.innerHTML = `Com o consumo de ${kwh} na bandeira ${bandeira}, a conta de energia se totaliza R$ ${valorbandeira}`}
+        }
+
+    if (vazamento == 0){
+        div_mensagem.innerHTML += `<br> Com o consumo de ${volumeAgua} litros de água contendo ${vazamento} vazamentos e a taxa de sanemaento, a conta de água se totaliza R$ ${valorAgua}<br>
+        Com o consumo de ${volumeGas}, a conta de gás totaliza em R$ ${valorGas}`
+        }
+        else{
+            valorAgua = valorAgua + (vazamento *10)
+        div_mensagem.innerHTML += `<br> Com o consumo de ${volumeAgua} litros de água contendo ${vazamento} vazamentos e a taxa de sanemaento, a conta de água se totaliza R$ ${valorAgua + (vazamento * 10)}<br>
+        Com o consumo de ${volumeGas}, a conta de gás totaliza em R$ ${valorGas}`
+        }
+
+    if (linhatelefone == 'sim'){
+        var valorInternetTelefone = valorInternet * 1.25
+        div_mensagem.innerHTML += `<br>Com o valor base de R$ ${valorInternet}, a conta de internet/telefone totaliza ${valorInternet * 1.25}<br>`
+
+    }
+        else{
+            valorInternetTelefone = valorInternet
+        div_mensagem.innerHTML += `<br>Com o valor base de R$ ${valorInternet}, a conta de internet/telefone totaliza ${valorInternet}<br>`
+        }
+
+    div_mensagem.innerHTML += `Gasto total de despesas mensal: R$ ${valorbandeira + valorAgua + valorGas + valorInternetTelefone }`
+
+    
+
+    
+}
+</script>

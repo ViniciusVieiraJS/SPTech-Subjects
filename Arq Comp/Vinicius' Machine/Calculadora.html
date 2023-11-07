@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Calculadora.css">
+</head>
+
+<body>
+    <div class="container_logo"> 
+        <img src="https://i.ibb.co/T2TdTMZ/vinicius-machine-low-resolution-logo-color-on-transparent-background-1.png">  
+    </div>
+    <br>
+    
+  <div class="container_numero">Decimal
+    <input id="input_decimal" type="text" placeholder="Digite o valor em decimal">
+    <button class="botao" onclick="calcular10()">Ver conversões</button></div>
+
+  <div class="container_numero">Binário
+    <input id="input_binario" type="text" placeholder="Digite o valor em binário">
+    <button class="botao" onclick="calcular2()">Ver conversões</button></div>
+
+  <div class="container_numero">Octal
+    <input id="input_octal" type="text" placeholder="Digite o valor em octal">
+    <button class="botao" onclick="calcular8()">Ver conversões</button></div>
+
+  <div class="container_numero">Hexadecimal
+    <input style="width: 180px;" id="input_hexadecimal" type="text" placeholder="Digite o valor em hexadecimal">
+    <button class="botao" onclick="calcular16()">Ver conversões</button></div>
+  <br>
+  <br>
+  <br>
+
+  <center><div style="font-family: Nunito Sans; font-weight: bold;" id="div_resultado"></div></center>
+
+
+  
+        
+
+
+
+
+
+<div style="position:absolute; bottom: 0; left: 0;">
+<audio controls loop autoplay style="width: 200px; height: 30px;">
+	<source src="https://ia601901.us.archive.org/35/items/boa_-_duvet/01.%20Duvet.mp3" type="audio/mpeg">
+	<source src="https://ia601901.us.archive.org/35/items/boa_-_duvet/01.%20Duvet.mp3" type="audio/ogg">
+</audio>
+</div>
+<div class="agradecimentos">Produzido por Vinicius Vieira <br>
+Agradecimentos: Marise Miranda e Pedro Sarabando   
+</div>
+
+
+
+
+
+
+<script>
+
+function calcular10() {
+        var numero_decimal = Number(input_decimal.value);
+        var binario = numero_decimal.toString(2);
+        var octal = numero_decimal.toString(8);
+        var hexadecimal = numero_decimal.toString(16);
+
+        div_resultado.innerHTML = `O número decimal ${numero_decimal}, na base 2, é ${binario} <br>
+        Na base 8, é ${octal} <br>
+        Na base 16, é ${hexadecimal}`;
+    }
+
+    function calcular2() {
+        var numero_binario = parseInt(input_binario.value, 2);
+        var decimal = numero_binario.toString(10);
+        var octal = numero_binario.toString(8);
+        var hexadecimal = numero_binario.toString(16);
+
+        div_resultado.innerHTML = `O número binário ${input_binario.value}, na base 10, é ${decimal} <br>
+        Na base 8, é ${octal} <br>
+        Na base 16, é ${hexadecimal}`;
+    }
+
+    function calcular8() {
+        var numero_octal = parseInt(input_octal.value, 8);
+        var decimal = numero_octal.toString(10);
+        var binario = numero_octal.toString(2);
+        var hexadecimal = numero_octal.toString(16);
+
+        div_resultado.innerHTML = `O número octal ${input_octal.value}, na base 10, é ${decimal} <br>
+        Na base 2, é ${binario} <br>
+        Na base 16, é ${hexadecimal}`;
+    }
+
+    function calcular16() {
+        var numero_hexadecimal = parseInt(input_hexadecimal.value, 16);
+        var decimal = numero_hexadecimal.toString(10);
+        var binario = numero_hexadecimal.toString(2);
+        var octal = numero_hexadecimal.toString(8);
+
+        div_resultado.innerHTML = `O número hexadecimal ${input_hexadecimal.value}, na base 10, é ${decimal} <br>
+        Na base 2, é ${binario} <br>
+        Na base 8, é ${octal}`;
+    }
+</script></body></html>

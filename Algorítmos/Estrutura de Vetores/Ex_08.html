@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o nome do aluno para cadastrá-lo: <input type="text" id="input_aluno"><br>
+    <button onclick="cadastro()">Cadastrar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    var listaAlunos = []
+
+    function cadastro(){
+        var aluno = input_aluno.value;
+        listaAlunos.push(aluno)
+        div_mensagem.innerHTML = ""
+
+        for (var i = 1; i <= listaAlunos.length; i++) {
+            var alunoAtual = listaAlunos[listaAlunos.length - i];
+            
+
+            div_mensagem.innerHTML += `${alunoAtual}<br>`
+
+
+            
+        }
+    }
+</script>

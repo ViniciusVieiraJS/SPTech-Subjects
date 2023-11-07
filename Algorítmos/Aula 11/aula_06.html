@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a temperatura atual <input type="number" id="input_temperatura"><br>
+    <button onclick="termometro()">AAAAAAAAAAAAAA</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function termometro(){
+        var temperatura = input_temperatura.value
+
+if (temperatura < 15) div_mensagem.innerHTML = `Muito Frio!`;
+    else if (temperatura <= 25) div_mensagem.innerHTML = `Temperatura OK`;
+    else if (temperatura <= 50) div_mensagem.innerHTML = `Muito Calor`;
+    else div_mensagem.innerHTML = `Cuidado! Você vai torrar!`;
+
+}
+</script>
+

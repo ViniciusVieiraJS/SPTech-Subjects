@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira um número <input type="number" id="input_numero"><br>
+    Insira uma frase <input type="text" id="input_frase"><br>
+    <button onclick="papagaio()">Papagaio</button>
+    
+</body>
+</html>
+<script>
+    function papagaio(){
+        var numero = Number(input_numero.value);
+        var frase = input_frase.value;
+
+        var contador = 0
+        var fraseFinal = ""
+
+        while(contador < numero){
+        contador += 1
+        fraseFinal += `${frase} `;
+    
+    }
+
+        contador = 0;
+
+        while(contador < numero){
+        alert(fraseFinal);
+        contador += 1;
+        }
+
+    }
+</script>

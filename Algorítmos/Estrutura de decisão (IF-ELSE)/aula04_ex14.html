@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn{background-color: #000000; color: white; border-radius: 15px;}
+        body{text-align: center; padding-top: 10%; background-color: rgb(198, 228, 255);}
+        #qtd_filhos{border-radius: 15px 5px; border-style:hidden; padding-left: 10px;} 
+        #p_negativo{font-weight: bold; color: red;}
+    </style>
+</head>
+<body>
+    Nome passageiro: <input type="text" id="input_nome"><br><br>
+    Distancia em km: <input type="number" id="qtd_km"><br><br>
+    Bandeira da corrida: <input type="number" id="input_bandeira"><br><br>
+    Horario da corrida: <input type="number" id="input_time"><br><br>
+    <button onclick="Calc()" id="btn">Calcular corrida</button><br><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function Calc(){
+        
+
+        var nome = input_nome.value;
+        var km = Number(qtd_km.value);
+        var bandeira = Number(input_bandeira.value);
+        var time = Number(input_time.value);
+
+        if( bandeira >= 1){
+            if(bandeira > 3){
+                alert('Insira um numero de 1 a 3 no campo "bandeira"');
+            }
+
+            if(time >= 0 ){
+                if(time >= 24){
+                    alert('Insira um horario de 0 até 23h');
+                }
+                if(time <= 23){
+                    alert('PARABENS');
+                    // CONTA =   1.25(PRECO POR KM) * 10 (QUANTIDADE KM) + (10 * 1.25) * 0.15 (ADICIONAL POR HR DA BANDEIRA)
+                    if(bandeira == 1){
+                        if(time <=6){
+                            var totalPreco = 1.25 * km + (km * 1.25) * 0.05;
+                            div_resultado.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá  ${km} km e o total da corrida será de R$${totalPreco}`
+                        }
+                        if(time <= 12){
+                            var totalPreco = 1.25 * km + (km * 1.25) * 0.10;
+                            div_resultado.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá  ${km} km e o total da corrida será de R$${totalPreco}`
+                        }
+                        if(time <= 23){
+                            var totalPreco = 1.25 * km + (km * 1.25) * 0.15;
+                            div_resultado.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá  ${km} km e o total da corrida será de R$${totalPreco}`
+                        }
+                    }
+                    if(bandeira == 2){
+                        if(time <=6){
+                            var totalPreco = 1.25 * km + (km * 1.25) * 0.1;
+                            div_resultado.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá  ${km} km e o total da corrida será de R$${totalPreco}`
+                        }
+                        if(time <= 12){
+                            var totalPreco = 1.25 * km + (km * 1.25) * 0.2;
+                            div_resultado.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá  ${km} km e o total da corrida será de R$${totalPreco}`
+                        }
+                        if(time <= 23){
+                            var totalPreco = 1.25 * km + (km * 1.25) * 0.3;
+                            div_resultado.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá  ${km} km e o total da corrida será de R$${totalPreco}`
+                        }
+                    }
+                    if(bandeira == 3){
+                        if(time <=6){
+                            var totalPreco = 1.25 * km + (km * 1.25) * 0.15;
+                            div_resultado.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá  ${km} km e o total da corrida será de R$${totalPreco}`
+                        }
+                        if(time <= 12){
+                            var totalPreco = 1.25 * km + (km * 1.25) * 0.30;
+                            div_resultado.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá  ${km} km e o total da corrida será de R$${totalPreco}`
+                        }
+                        if(time <= 23){
+                            var totalPreco = 1.25 * km + (km * 1.25) * 0.45;
+                            div_resultado.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá  ${km} km e o total da corrida será de R$${totalPreco}`
+                        }
+                    }
+
+                }
+            }
+            if(time < 0){
+                alert('Insira um horario de 0 até 23h');
+            }
+
+        }
+        if( bandeira < 0){
+            alert('Insira um numero de 1 a 3 no campo "bandeira"');
+        }
+    } 
+
+</script>
